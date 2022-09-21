@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import com.gildedrose.item.Item2;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -23,12 +24,13 @@ public class GoldenMasterTest {
         // GIVEN
         int days = 100;
         Item itemLegacy = new Item(name, sellIn, quality);
-        Item2 itemRefactored = new Item2(name, sellIn, quality);
+        Item2 itemRefactored = Item2.create(name, sellIn, quality);
 
-        // WHEN
         for (int day = 0; day < days; day++) {
+            // WHEN
             itemLegacy.updateQuality();
             itemRefactored.updateQuality();
+            // THEN
             assertThat(itemRefactored.toString())
                     .describedAs("day " + day)
                     .isEqualTo(itemLegacy.toString());
