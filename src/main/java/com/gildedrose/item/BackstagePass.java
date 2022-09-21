@@ -1,6 +1,6 @@
 package com.gildedrose.item;
 
-public class BackstagePass extends Item2 {
+public class BackstagePass extends Item {
     public static final String NAME = "Backstage passes to a TAFKAL80ETC concert";
 
     public BackstagePass(int sellIn, int quality) {

@@ -1,6 +1,6 @@
 package com.gildedrose.item;
 
-public class Item2 {
+public class Item {
     public static final int MAX_QUALITY = 50;
     public static final int MIN_QUALITY = 0;
 
@@ -8,13 +8,13 @@ public class Item2 {
     private int sellIn;
     private int quality;
 
-    protected Item2(String name, int sellIn, int quality) {
+    protected Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
     }
 
-    public static Item2 create(String name, int sellIn, int quality) {
+    public static Item create(String name, int sellIn, int quality) {
         switch (name) {
             case AgedBrie.NAME:
                 return new AgedBrie(sellIn, quality);
@@ -23,7 +23,7 @@ public class Item2 {
             case BackstagePass.NAME:
                 return new BackstagePass(sellIn, quality);
             default:
-                return new Item2(name, sellIn, quality);
+                return new Item(name, sellIn, quality);
         }
     }
 

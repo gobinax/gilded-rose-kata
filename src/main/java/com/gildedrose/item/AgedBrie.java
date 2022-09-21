@@ -1,6 +1,6 @@
 package com.gildedrose.item;
 
-public class AgedBrie extends Item2 {
+public class AgedBrie extends Item {
     public static final String NAME = "Aged Brie";
 
     public AgedBrie(int sellIn, int quality) {
